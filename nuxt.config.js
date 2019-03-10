@@ -1,4 +1,18 @@
 module.exports = {
+
+  /*
+  ** Modules
+  */
+
+ modules: [
+  '@nuxtjs/vuetify'
+  ],
+
+  // Vuetify options
+  vuetify: {
+    //  theme: { }
+  },
+
   /*
   ** Headers of the page
   */

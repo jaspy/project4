@@ -1,4 +1,5 @@
 <template>
+  <v-app>
   <section class="container">
     <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
     <h1 class="title">
@@ -13,6 +14,7 @@
     </ul>
         {{ counter }}
   </section>
+  </v-app>
 </template>
 
 <script>
