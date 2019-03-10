@@ -1,15 +1,15 @@
 export const state = () => ({
-    counter: 123
-})
+  counter: 123,
+});
 
 export const mutations = {
-    increment (state) {
-        state.counter++
-    }
-} 
+  increment(state) {
+    state.counter++;
+  },
+};
 
 export const getters = {
-    counter (state) {
-        return state.counter
-    }
-} 
+  counter(state) {
+    return state.counter;
+  },
+};

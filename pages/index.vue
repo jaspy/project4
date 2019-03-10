@@ -1,56 +1,56 @@
 <template>
   <v-app>
-  <section class="container">
-    <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
-    <h1 class="title">
-      USERS
-    </h1>
-    <ul class="users">
-      <li v-for="(user, index) in users" :key="index" class="user">
-        <nuxt-link :to="{ name: 'id', params: { id: index }}">
-          {{ user.name }}
-        </nuxt-link>
-      </li>
-    </ul>
-        {{ counter }}
-  </section>
+    <section class="container">
+      <img src="~assets/img/logo.png" alt="Nuxt.js Logo" class="logo" />
+      <h1 class="title">
+        USERS
+      </h1>
+
+      <ul class="users">
+        <li v-for="(user, index) in users" :key="index" class="user">
+          <nuxt-link :to="{ name: 'id', params: { id: index } }">
+            {{ user.name }}
+          </nuxt-link>
+        </li>
+      </ul>
+
+      {{ counter }}
+    </section>
   </v-app>
 </template>
 
 <script>
-import axios from '~/plugins/axios'
-import { mapGetters } from 'vuex'
+import axios from '~/plugins/axios';
+import { mapGetters } from 'vuex';
 
 export default {
-  async asyncData () {
-    let { data } = await axios.get('/api/users')
-    return { users: data }
+  computed: {
+    ...mapGetters(['counter']),
   },
-  head () {
+
+  async asyncData() {
+    const { data } = await axios.get('/api/users');
+    return { users: data };
+  },
+
+  head() {
     return {
-      title: 'Users'
-    }
+      title: 'Users',
+    };
   },
-  computed:{
-    ...mapGetters(['counter'])
-  }
-}
+};
 </script>
 
 <style scoped lang="scss">
-
-.title
-{
+.title {
   margin: 30px 0;
 }
-.users
-{
+.users {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.user
-{
+.user {
   margin: 10px 0;
 }
 </style>
