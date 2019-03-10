@@ -29,8 +29,12 @@ module.exports = {
 		"printWidth": 80, 
 		"trailingComma": "all", 
 		"useTabs": false 
-	}],
-	"vue/singleline-html-element-content-newline": "off",
+  }],
+  "vue/component-name-in-template-casing": ["error", "PascalCase", {
+    "registeredComponentsOnly": true,
+    "ignores": []
+  }],	
+  "vue/singleline-html-element-content-newline": "off",
 	"vue/html-indent": "off",
 	"vue/multiline-html-element-content-newline": "off",
 	"vue/html-self-closing": ["error", {
