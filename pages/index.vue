@@ -11,11 +11,13 @@
         </nuxt-link>
       </li>
     </ul>
+        {{ counter }}
   </section>
 </template>
 
 <script>
 import axios from '~/plugins/axios'
+import { mapGetters } from 'vuex'
 
 export default {
   async asyncData () {
@@ -26,11 +28,15 @@ export default {
     return {
       title: 'Users'
     }
+  },
+  computed:{
+    ...mapGetters(['counter'])
   }
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+
 .title
 {
   margin: 30px 0;
