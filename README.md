@@ -1,5 +1,7 @@
 # project4
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/cfb72d9d1e624d559eb0b46dc652cf79)](https://app.codacy.com/app/foobic/project4?utm_source=github.com&utm_medium=referral&utm_content=testio123/project4&utm_campaign=Badge_Grade_Dashboard)
+
 > Nuxt.js project
 
 ## Build Setup
