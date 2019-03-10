@@ -1,0 +1,33 @@
+# Use postgres/example user/password credentials
+version: '3.5'
+
+services:
+  db:
+    image: postgres:10.7
+    restart: always
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+      PGDATA: /var/lib/postgresql/data/pg_data
+    volumes:
+      - pg_data:/var/lib/postgresql/data/pg_data
+      - ./123.sql:/docker-entrypoint-initdb.d/dump.sh
+    ports:
+      - 5432:5432
+    networks:
+      - net
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 9090:8080
+    networks:
+      - net
+
+networks: 
+  net:
+
+volumes:
+  pg_data:

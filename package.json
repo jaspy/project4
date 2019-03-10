@@ -11,6 +11,7 @@
     "test": "npx mocha api/tests/* ",
     "test:watch": "npx mocha api/tests/* --watch",
     "precommit": "npm run lint",
+    "dev-debug": "node --inspect node_modules/.bin/nuxt",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
@@ -49,6 +50,7 @@
   },
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "npm test"
     }
