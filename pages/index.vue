@@ -5,7 +5,7 @@
       <h1 class="title">
         USERS
       </h1>
-
+      <h1 class="red">Hello {{ name }}!</h1>
       <ul class="users">
         <li v-for="(user, index) in users" :key="index" class="user">
           <nuxt-link :to="{ name: 'id', params: { id: index } }">
@@ -24,6 +24,9 @@ import axios from '~/plugins/axios';
 import { mapGetters } from 'vuex';
 
 export default {
+  data() {
+    return { name: 'world' };
+  },
   computed: {
     ...mapGetters(['counter']),
   },

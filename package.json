@@ -8,9 +8,11 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt build && nuxt start",
+    "test": "npx mocha api/tests/* ",
+    "test:watch": "npx mocha api/tests/* --watch",
     "precommit": "npm run lint",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
+    "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "@nuxtjs/vuetify": "^0.5.5",
@@ -21,7 +23,10 @@
     "source-map-support": "^0.4.15"
   },
   "devDependencies": {
+    "ava": "^1.3.1",
     "babel-eslint": "^7.2.3",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "eslint": "^4.19.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": "^10.2.1",
@@ -33,6 +38,8 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
     "eslint-plugin-vue": "^5.2.2",
+    "jsdom": "^14.0.0",
+    "mocha": "^6.0.2",
     "node-sass": "^4.11.0",
     "prettier": "^1.16.4",
     "sass-loader": "^7.1.0"
